@@ -1,0 +1,249 @@
+body,html{
+    width:100%;
+    height:100%;
+    font-family: Arial, "Hiragino Sans GB", "Microsoft YaHei",
+    "WenQuanYi Micro Hei", sans-serif;
+}
+a:visited{color: #b0d3ff};
+ul{margin: 0;padding: 0};
+.head{
+    width: 100%;
+    height: 57px;
+    line-height:57px;
+    background: #3083eb;
+    li{
+        float: right;
+        font-size: 14px;
+        color: #b0d3ff;
+        margin-right: 20px;
+    }
+    .logo{
+        float: left;
+        font-size: 24px;
+        margin-left: 20px;
+        color: #fff;
+    }
+}
+.leftPanel{
+    position: absolute;
+    width: 200px;
+    background-color: #f6fafd;
+    ul{
+        padding: 7px 0 0 0;
+        font-size: 0;
+    }
+    .myself-file,.public-file{
+        font-size: 14px;
+        border: 1px solid #f6fafd;
+        border-left: none;
+        border-right: none;
+        cursor: pointer;
+        height: 42px;
+        line-height: 42px;
+        a{
+            display: block;
+            outline:none;
+            padding-left:60px;
+            height: 42px;
+            position: relative;
+            .myfile,.pufile{
+                background:url("../img/1.png") no-repeat;
+                background-position: 0 4px;
+                height: 22px;
+                line-height:22px;
+                width: 22px;
+                display: inline-block;
+                position: absolute;
+                left:30px;
+                top:50%;
+                margin-top: -11px;
+            }
+            .pufile{
+                background-position: 0px -180px;
+            }
+            .text{
+                display: block;
+            }
+            .bg{
+                height: 44px;
+                position: absolute;
+                left:0;
+                overflow: hidden;
+                width: 3px;
+                background-color: #3083eb;
+                top:-1px;
+                display: none;
+            }
+            .myfile ~ .bg{
+                display: block;
+            }
+        }
+
+    }
+    .myself-file{
+        background-color: #e3f0fc;
+        border-bottom: 1px solid #d9ebfc;
+        border-top: 1px solid #d9ebfc;
+        color: #0068b7;
+    }
+}
+.mainPanel{
+    margin-left:200px;
+    position: relative;
+    z-index: 1;
+    .toolbar{
+        background: #fff;
+        height:50px;
+        border: 1px;
+        border-bottom: 1px solid #e5ebf1;
+        z-index: 10;
+        position: relative;
+        zoom: 1;
+        overflow: hidden;
+        .btn-group{
+            float: left;
+            padding: 10px 24px;
+        }
+        .item{
+            margin-right: 9px;
+            float: left;
+        }
+        .sp{
+            display: none;
+        }
+        .btn{
+            background-color: #fff;
+            border-radius: 2px;
+            border: 1px solid #bbcbdf;
+            color: #536083;
+            cursor: pointer;
+            font-size: 12px;
+            height:16px;
+            min-width: 47px;
+            overflow: hidden;
+            padding: 6px 14px;
+            text-align: center;
+            display: inline-block;
+        }
+        .btn-blue{
+            background-color: #3e94fe;
+            border-color: #3e94fe;
+            color: #fff;
+        }
+        .btn-grey{
+            background-image: linear-gradient(to top,#f5f9fc,#fff);
+        }
+        .icon{
+            background: url("../img/2.png") no-repeat 0 0;
+            height: 16px;
+            width: 16px;
+            margin-right: 6px;
+            display: inline-block;
+            float: left;
+        }
+        .upload:hover,.new:hover,.download:hover,.delete:hover{
+            background-color: #3083EB;
+            background-image: none;
+            color: #fff;
+            border-color: #3984e5;
+        }
+        .upload i{
+            background-position: -25px -593px;
+        }
+        .new i{
+            background-position: 0 -622px;
+        }
+        .new:hover i{
+            background-position: -25px -622px;
+        }
+        .download i{
+            background-position: 0px -88px;
+        }
+        .download:hover i{
+            background-position: -25px -88px;
+        }
+        .delete i{
+            background-position: 0 -58px;
+        }
+        .delete:hover i{
+            background-position: -25px -58px;
+        }
+        .label{
+            height:16px;
+            line-height:16px;
+            text-align: center;
+            white-space: nowrap;
+            display: inline-block;
+            float: left;
+        }
+    }
+    .path-panel{
+        height:38px;
+        margin-bottom: 10px;
+        padding-left: 24px;
+        overflow: hidden;
+        .path-info{
+            font-size: 12px;
+            margin-top: 15px;
+            color: #7c87a5;
+        }
+        .new-path{
+            font-size: 12px;
+            color: #3083eb;
+        }
+        .back{
+            padding-right:10px;
+            border-right: 1px solid #cad5e3;
+            margin-right: 6px;
+            width:55px;
+            cursor: pointer;
+        }
+        .old-path{
+            margin-right: 6px;
+            width:55px;
+            cursor: pointer;
+        }
+        .path{
+            color: #7c87a5;
+        }
+    }
+    .file-list{
+        margin-left: 24px;
+        overflow-y: scroll;
+        ul{
+            padding-top: 10px;
+        }
+        .file{
+            width:114px;
+            height: 138px;
+            float: left;
+            box-sizing: border-box;
+            border: 1px solid #fff;
+            border-radius: 2px;
+            cursor: pointer;
+            margin: 0 5px 10px 0;
+            outline: none;
+        }
+        .file-bg,.file-txt-bg{
+            width: 84px;
+            height: 80px;
+            display: inline-block;
+            margin: 12px 14px 4px 14px;
+            background-image: url("../img/file-bg.png");
+            background-size: 100% 100%;
+        }
+        .file-txt-bg{
+            background-image: url("../img/file-txt-bg.png");
+        }
+        .date{
+            text-align: center;
+            font-size: 12px;
+            height:23px;
+            line-height:23px;
+            cursor: pointer;
+        }
+        .date:hover{
+            color: #3e94fe;
+        }
+    }
+}
