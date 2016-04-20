@@ -6,13 +6,16 @@ $(function(){
         "type":"POST",
         "url":"getTime",
         "dataType":"json",
+        "data": {userId:1},
         "success":function(data){
             var data = $.parseJSON(data.content);
             var $timelength = data.length;
             for(var i = 0;i<$timelength;i++){
                 $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
             }
-            $('.path-info').append(' <span class="path-name">我的文件</span>');
+            if($(".path-name").length==0){
+            	$('.path-info').append(' <span class="path-name">我的文件</span>');
+            }   
         },
         "error":function(){
             alert("数据库加载错误!");
@@ -22,14 +25,13 @@ $(function(){
         "type":"POST",
         "url":"getName",
         "dataType":"json",
-        "data": {time:time,},
+        "data": {time:time,userId:1},
         "success":function(data){
             var data = $.parseJSON(data.content);
             var $filelength = data.length;
             for(var i = 0;i<$filelength;i++){
-                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-txt-bg'></div><div class='date'>"+data[i].name+"</div></li>");
+                $(".list-holder ul").append("<li class='package' status='inactive'><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
             }
-        
             $('.path-info').html("<div class='new-path'><span class='back myback'>返回上一级</span><span class='old-path myback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
         "error":function(){
@@ -39,7 +41,7 @@ $(function(){
     var time;
     var pb_options_time = {
         "type":"POST",
-        "url":"",
+        "url":"getTime",
         "dataType":"json",
         "success":function(data){
         	 var data = $.parseJSON(data.content);
@@ -47,7 +49,9 @@ $(function(){
             for(var i = 0;i<$timelength;i++){
                 $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
             }
+            if($(".path-name").length==0){
             $('.path-info').append(' <span class="path-name">公共文件</span>');
+            }
         },
         "error":function(){
             alert("数据库加载错误!");
@@ -64,7 +68,6 @@ $(function(){
             for(var i = 0;i<$filelength;i++){
                 $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-txt-bg'></div><div class='date'>"+data[i].name+"</div></li>");
             }
-
             $('.path-info').html("<div class='new-path'><span class='back pbback'>返回上一级</span><span class='old-path pbback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
         "error":function(){
@@ -209,6 +212,8 @@ $(function(){
     //});
     $(document).on('dblclick','.file',Loadinfo);//文件双击进入事件
     $(document).on('click','.date',Loadinfo);//文件单击标签进入事件
+    //$(document).on('dblclick','.file',Loadinfopg);//文件双击查看详情进入事件
+    //$(document).on('click','.date',Loadinfopg);//文件单击查看详情进入事件
     $('body').on('click',function(){
         $(".file").css({
             "background":"#fff",
@@ -219,10 +224,12 @@ $(function(){
     });
     $(document).on('click','.myback',function(){
         $(".list-holder ul").empty();
+        $(".new-path").remove();
         $.ajax(my_options_time);
     });//点击返回我的文件
     $(document).on('click','.pbback',function(){
         $(".list-holder ul").empty();
+        $(".path-info").empty();
         $.ajax(pb_options_time);
     });//点击返回公共文件
 });

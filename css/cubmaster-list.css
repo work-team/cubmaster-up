@@ -231,7 +231,8 @@ ul {
 .mainPanel .file-list ul {
   padding-top: 10px;
 }
-.mainPanel .file-list .file {
+.mainPanel .file-list .file,
+.mainPanel .file-list .package {
   width: 114px;
   height: 138px;
   float: left;
@@ -254,13 +255,15 @@ ul {
 .mainPanel .file-list .file-txt-bg {
   background-image: url("../img/file-txt-bg.png");
 }
-.mainPanel .file-list .date {
+.mainPanel .file-list .date,
+.mainPanel .file-list .name {
   text-align: center;
   font-size: 12px;
   height: 23px;
   line-height: 23px;
   cursor: pointer;
 }
-.mainPanel .file-list .date:hover {
+.mainPanel .file-list .date:hover,
+.mainPanel .file-list .name:hover {
   color: #3e94fe;
 }
