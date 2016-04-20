@@ -20,7 +20,7 @@ $(function(){
         "error":function(){
             alert("数据库加载错误!");
         }
-    };
+    };//第一次私有加载
     var my_options_name = {
         "type":"POST",
         "url":"getName",
@@ -37,7 +37,7 @@ $(function(){
         "error":function(){
             alert("数据库加载错误!");
         }
-    };
+    };//第二次私有加载
     var time;
     var pb_options_time = {
         "type":"POST",
@@ -56,7 +56,7 @@ $(function(){
         "error":function(){
             alert("数据库加载错误!");
         }
-    };
+    };//第一次公有加载
     var pb_options_name = {
         "type":"get",
         "url":"getName",
@@ -66,14 +66,15 @@ $(function(){
         	 var data = $.parseJSON(data.content);
             var $filelength = data.length;
             for(var i = 0;i<$filelength;i++){
-                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-txt-bg'></div><div class='date'>"+data[i].name+"</div></li>");
+                $(".list-holder ul").append("<li class='package' status='inactive'><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
             }
             $('.path-info').html("<div class='new-path'><span class='back pbback'>返回上一级</span><span class='old-path pbback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
         "error":function(){
             alert("数据库加载错误!");
         }
-    };
+    };//第二次公有加载
+    var my_options_info
     $.ajax(my_options_time);//打开云盘的第一次加载时间
 
     //var timedata = [
@@ -124,7 +125,19 @@ $(function(){
     //];//测试文件名数据
     $pgheight = $(window).height() - 57;
     $lsheight = $(window).height() - 156;
-    function Loadinfo(){
+    function Loadinfo(){//对于文件信息的请求
+        $path = $(this).find(".date").text();
+        time=$path;
+        $oldpath = $('.path-name').text();
+        $(".list-holder ul").empty();
+        if($(document).find('.path-name').text()=="我的文件") {
+            $.ajax(my_options_name);//点击文件之后第二次加载我的文件名
+        }
+        else{
+            $.ajax(pb_options_name);//点击文件之后第二次加载公共文件名
+        }
+    }
+    function Loadinfopg(){//对于文件详情的请求
         $path = $(this).find(".date").text();
         time=$path;
         $oldpath = $('.path-name').text();
@@ -204,12 +217,7 @@ $(function(){
     });
 
 
-    //$(document).on('blur','.file',function(){
-    //    $(this).css({
-    //        "background":"#fff",
-    //        "border": "1px solid #fff"
-    //    })
-    //});
+
     $(document).on('dblclick','.file',Loadinfo);//文件双击进入事件
     $(document).on('click','.date',Loadinfo);//文件单击标签进入事件
     //$(document).on('dblclick','.file',Loadinfopg);//文件双击查看详情进入事件
