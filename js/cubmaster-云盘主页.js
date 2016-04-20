@@ -2,11 +2,12 @@
  * Created by tan on 16/4/15.
  */
 $(function(){
+    var time;var id;
     var my_options_time = {
         "type":"POST",
         "url":"getTime",
         "dataType":"json",
-        "data": {userId:1},
+        "data": {"userId":"1"},
         "success":function(data){
             var data = $.parseJSON(data.content);
             var $timelength = data.length;
@@ -25,12 +26,13 @@ $(function(){
         "type":"POST",
         "url":"getName",
         "dataType":"json",
-        "data": {time:time,userId:1},
+        "data": {"time":"time","userId":"1"},
         "success":function(data){
             var data = $.parseJSON(data.content);
             var $filelength = data.length;
             for(var i = 0;i<$filelength;i++){
                 $(".list-holder ul").append("<li class='package' status='inactive'><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
+                $(".package").eq(i).data("ID",data[i].id);
             }
             $('.path-info').html("<div class='new-path'><span class='back myback'>返回上一级</span><span class='old-path myback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
@@ -38,7 +40,16 @@ $(function(){
             alert("数据库加载错误!");
         }
     };//第二次私有加载
-    var time;
+    var my_options_info = {
+        "type":"POST",
+        "url":"",
+        "dataType":"json",
+        "data": {"id":"id"},
+        "success":function(data){
+            var data = $.parseJSON(data.content);
+
+        }
+    };//第三次私有加载
     var pb_options_time = {
         "type":"POST",
         "url":"getTime",
@@ -58,15 +69,16 @@ $(function(){
         }
     };//第一次公有加载
     var pb_options_name = {
-        "type":"get",
+        "type":"POST",
         "url":"getName",
         "dataType":"json",
-		"data": {time:time,},
+		"data": {"time":"time"},
         "success":function(data){
-        	 var data = $.parseJSON(data.content);
+            var data = $.parseJSON(data.content);
             var $filelength = data.length;
             for(var i = 0;i<$filelength;i++){
-                $(".list-holder ul").append("<li class='package' status='inactive'><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
+                $(".list-holder ul").append("<li class='package' status='inactive' data><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
+                $(".package").eq(i).data("ID",data[i].id);
             }
             $('.path-info').html("<div class='new-path'><span class='back pbback'>返回上一级</span><span class='old-path pbback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
@@ -74,7 +86,16 @@ $(function(){
             alert("数据库加载错误!");
         }
     };//第二次公有加载
-    var my_options_info
+    var pb_options_info = {
+        "type":"POST",
+        "url":"",
+        "dataType":"json",
+        "data": {"id":"id"},
+        "success":function(data){
+            var data = $.parseJSON(data.content);
+        }
+    };//第三次公有加载
+
     $.ajax(my_options_time);//打开云盘的第一次加载时间
 
     //var timedata = [
@@ -138,15 +159,12 @@ $(function(){
         }
     }
     function Loadinfopg(){//对于文件详情的请求
-        $path = $(this).find(".date").text();
-        time=$path;
-        $oldpath = $('.path-name').text();
-        $(".list-holder ul").empty();
+        id = $(this).data("ID");
         if($(document).find('.path-name').text()=="我的文件") {
-            $.ajax(my_options_name);//点击文件之后第二次加载我的文件名
+            $.ajax(my_options_info);//点击文件之后第二次加载我的文件名
         }
         else{
-            $.ajax(pb_options_name);//点击文件之后第二次加载公共文件名
+            $.ajax(pb_options_info);//点击文件之后第二次加载公共文件名
         }
     }
     $(".leftPanel").css({height:$pgheight});
