@@ -4,13 +4,13 @@
 $(function(){
     var my_options_time = {
         "type":"POST",
-        "url":"",
+        "url":"getTime",
         "dataType":"json",
         "success":function(data){
-            var data = $.parseJSON(data);
+            var data = $.parseJSON(data.content);
             var $timelength = data.length;
             for(var i = 0;i<$timelength;i++){
-                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+timedata[i].time+"</div></li>");
+                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
             }
             $('.path-info').append(' <span class="path-name">我的文件</span>');
         },
@@ -20,29 +20,32 @@ $(function(){
     };
     var my_options_name = {
         "type":"POST",
-        "url":"",
+        "url":"getName",
         "dataType":"json",
+        "data": {time:time,},
         "success":function(data){
-            var data = $.parseJSON(data);
+            var data = $.parseJSON(data.content);
             var $filelength = data.length;
             for(var i = 0;i<$filelength;i++){
-                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-txt-bg'></div><div class='date'>"+filename[i].attributeName+"</div></li>");
+                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-txt-bg'></div><div class='date'>"+data[i].name+"</div></li>");
             }
+        
             $('.path-info').html("<div class='new-path'><span class='back myback'>返回上一级</span><span class='old-path myback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
         "error":function(){
             alert("数据库加载错误!");
         }
     };
+    var time;
     var pb_options_time = {
         "type":"POST",
         "url":"",
         "dataType":"json",
         "success":function(data){
-            var data = $.parseJSON(data);
+        	 var data = $.parseJSON(data.content);
             var $timelength = data.length;
             for(var i = 0;i<$timelength;i++){
-                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+timedata[i].time+"</div></li>");
+                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
             }
             $('.path-info').append(' <span class="path-name">公共文件</span>');
         },
@@ -51,15 +54,17 @@ $(function(){
         }
     };
     var pb_options_name = {
-        "type":"POST",
-        "url":"",
+        "type":"get",
+        "url":"getName",
         "dataType":"json",
+		"data": {time:time,},
         "success":function(data){
-            var data = $.parseJSON(data);
+        	 var data = $.parseJSON(data.content);
             var $filelength = data.length;
             for(var i = 0;i<$filelength;i++){
-                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-txt-bg'></div><div class='date'>"+filename[i].attributeName+"</div></li>");
+                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-txt-bg'></div><div class='date'>"+data[i].name+"</div></li>");
             }
+
             $('.path-info').html("<div class='new-path'><span class='back pbback'>返回上一级</span><span class='old-path pbback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
         "error":function(){
@@ -117,8 +122,9 @@ $(function(){
     $pgheight = $(window).height() - 57;
     $lsheight = $(window).height() - 156;
     function Loadinfo(){
-        var $path = $(this).find(".date").text();
-        var $oldpath = $('.path-name').text();
+        $path = $(this).find(".date").text();
+        time=$path;
+        $oldpath = $('.path-name').text();
         $(".list-holder ul").empty();
         if($(document).find('.path-name').text()=="我的文件") {
             $.ajax(my_options_name);//点击文件之后第二次加载我的文件名
