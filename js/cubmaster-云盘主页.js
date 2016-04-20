@@ -258,4 +258,7 @@ $(function(){
         $(".path-info").empty();
         $.ajax(pb_options_time);
     });//点击返回公共文件
+    $("#uplist").on("click",function(){
+        location.href = "cubmaster-上传表单.html"
+    })
 });
