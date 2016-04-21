@@ -150,6 +150,7 @@ $(function(){
                         for(var n = 0;n < data.length;n++){
                             $(".boxpac").eq(n).find(".box").eq(1).find(".name").val(data[n].type);
                             $(".boxpac").eq(n).find(".box").eq(2).find(".name").val(data[n].lossNumber);
+<<<<<<< HEAD
                             if(data[n].type=="NAN"){
                                 $(".boxpac").eq(n).find(".box").eq(2).find(".add").val("文本");
                                 $(".boxpac").eq(n).find(".box").eq(2).find(".add").text("文本");
@@ -166,6 +167,9 @@ $(function(){
                                  	$(".boxpac").eq(n).find(".box").eq(1).find(".add").val("离散");
                                  	$(".boxpac").eq(n).find(".box").eq(1).find(".add").text("离散");
                                 }
+=======
+                            $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(0).val(data[n].min+"~"+data[n].max);
+>>>>>>> d4dc08a2166833b3f44950f67e42de0f0500be4c
                             $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(1).val(data[n].sum);
                             if(n<=data.length-2){
                                 $(".addmore").triggerHandler("click");
