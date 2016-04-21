@@ -142,7 +142,7 @@ $(function(){
     }
     function Loadinfopg(){//对于文件详情的请求
         id = $(this).data("ID");
-        location.href = "cubmaster_数据展示.html?id="+id;
+        location.href = "cubmaster-数据展示.html?id="+id;
     }
     $(".leftPanel").css({height:$pgheight});
     $(".mainPanel").css({height:$pgheight});

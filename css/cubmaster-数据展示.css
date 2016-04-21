@@ -40,16 +40,6 @@ a {
   margin: auto;
   background-color: #fff;
 }
-.container .close {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  cursor: pointer;
-}
-.container .close img {
-  width: 30px;
-  height: 30px;
-}
 .container .box-container {
   overflow: hidden;
 }
