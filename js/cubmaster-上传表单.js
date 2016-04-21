@@ -3,6 +3,9 @@
  */
 $(function(){
     var $info = 0;
+    $("#logo").on('click',function(){
+        location.href = "cubmaster-云盘主页.html"
+    });
     $("#form").on('click','.choose',function(event){
         $(this).find(".show").slideToggle(50);
         $(this).blur(function(){
@@ -182,4 +185,4 @@ $(function(){
     $("#form").submit(function () {
         $(this).ajaxSubmit(option);
     });
-})
+});

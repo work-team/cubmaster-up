@@ -2,7 +2,6 @@
  * Created by tan on 16/4/15.
  */
 $(function(){
-    console.log($(".leftPanel").text())
     var time;var id;var $oldpath;var $path;
     var my_options_time = {
         "type":"POST",
@@ -261,5 +260,8 @@ $(function(){
     });//点击返回公共文件
     $("#uplist").on("click",function(){
         location.href = "cubmaster-上传表单.html"
-    })
+    });
+    $("#logo").on('click',function(){
+        location.href = "cubmaster-云盘主页.html"
+    });
 });

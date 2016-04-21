@@ -57,6 +57,7 @@ textarea:focus {
   font-size: 24px;
   margin-left: 20px;
   color: #fff;
+  cursor: pointer;
 }
 .container {
   overflow: hidden;
