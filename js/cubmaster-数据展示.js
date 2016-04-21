@@ -8,9 +8,9 @@ $(function(){
     var $pg_num;
     $.ajax({
         "type":"POST",
-        "url":"all",
+        "url":"getInfo",
         "datatype":"json",
-        "data":{"id":id},
+        "data":{"datasetId":id},
         success:function(data){
             data = $.parseJSON(data);
             $pg_num = 1;
@@ -23,9 +23,13 @@ $(function(){
             $("#SubmitDatetime").text(data[0].submitDatetime);
             $("#DownloadCount").text(data[0].downloadCount);
             var $inf = $(".inf").html();
+            var $infheight = $(".inf").height();
+            console.log($infheight)
             for (var i = 0, j = 0; i <= (data[0].attributes.length * 2 - 2); i = i + 2, j++) {
                 if ((data[0].attributes.length - j) > 1) {
+                	$(".container").css({"height":"+="+$infheight});
                     $(".inf").append($inf);
+                   
                 }
                 var $li_first = $(".inf").find("ul").eq(i).find("li");
                 var $li_second = $(".inf").find("ul").eq(i + 1).find("li");

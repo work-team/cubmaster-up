@@ -2,7 +2,7 @@
  * Created by tan on 16/3/25.
  */
 $(function(){
-    var $info = 0;
+    var $info ="数值";
     $("#logo").on('click',function(){
         location.href = "cubmaster-云盘主页.html"
     });
@@ -54,11 +54,11 @@ $(function(){
     $(".addmore").click(function(){
         var lielength = null;
         function Jug(){
-            if($info=="数值"){
+            if($info=="文本"){
                 lielength = 2;
                 Add();
             }
-            else if($info=="文本"){
+            else if($info=="数值"){
                 lielength = 999;
                 Add();
             }
@@ -127,41 +127,54 @@ $(function(){
             form.append("name", name);
             form.append("total", shardCount); //总片数
             form.append("index", i + 1); //当前是第几片
+            if($info=="文本"){
+             form.append("i",0); 
+            }
+            else if($info=="数值"){
+            form.append("i",1); 
+            }
             i++;
             $.ajax({
-                url: "fileupload",
+                url: "upload",
                 type: "POST",
                 data: form,
                 async: true, //异步
                 processData: false, //很重要，告诉jquery不要对form进行处理
                 contentType: false, //很重要，指定为false才能形成正确的Content-Type
-                success: function(){
+                success: function(data){
                     $("#show").text(i+"/"+shardCount);
                     if(i<shardCount)
                         up();
                     else{
-                        $.ajax({
-                            url:"",
-                            type:POST,
-                            dataType:json,
-                            success:function(data){
-                                var data = $.parseJSON(data);
-                                for(var n = 0;n < data.length;n++){
-                                    $(".boxpac").eq(n).find(".box").eq(1).find(".name").val(data[n].type);
-                                    $(".boxpac").eq(n).find(".box").eq(2).find(".name").val(data[n].lossNumber);
-                                    $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(0).val(data[n].min+"~"+data[n].max);
-                                    $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(1).val(data[n].sum);
-                                    if(n<=data.length-2){
-                                        $(".addmore").triggerHandler("click");
-                                    }
+                        var data = $.parseJSON(data);
+                        for(var n = 0;n < data.length;n++){
+                            $(".boxpac").eq(n).find(".box").eq(1).find(".name").val(data[n].type);
+                            $(".boxpac").eq(n).find(".box").eq(2).find(".name").val(data[n].lossNumber);
+                            if(data[n].type=="NAN"){
+                                $(".boxpac").eq(n).find(".box").eq(2).find(".add").val("文本");
+                                $(".boxpac").eq(n).find(".box").eq(2).find(".add").text("文本");
+                                if(data[n].bool=="1"){
+                                	$(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(0).val(data[n].area);
+                             	$(".boxpac").eq(n).find(".box").eq(1).find(".add").val("布尔");
+                             	$(".boxpac").eq(n).find(".box").eq(1).find(".add").text("布尔");
                                 }
+                                }
+                                else{
+                                	$(".boxpac").eq(n).find(".box").eq(2).find(".add").val("数值");
+                                    $(".boxpac").eq(n).find(".box").eq(2).find(".add").text("数值");
+                                 	$(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(0).val(data[n].area);
+                                 	$(".boxpac").eq(n).find(".box").eq(1).find(".add").val("离散");
+                                 	$(".boxpac").eq(n).find(".box").eq(1).find(".add").text("离散");
+                                }
+                            $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(1).val(data[n].sum);
+                            if(n<=data.length-2){
+                                $(".addmore").triggerHandler("click");
                             }
-                        })
+                        }
                     }
                 }
             });
         }
-
     }
     var option = {
         target:"#form",
