@@ -140,23 +140,16 @@ $(function(){
                     if(i<shardCount)
                         up();
                     else{
-                        $.ajax({
-                            url:"",
-                            type:POST,
-                            dataType:json,
-                            success:function(data){
-                                var data = $.parseJSON(data);
-                                for(var n = 0;n < data.length;n++){
-                                    $(".boxpac").eq(n).find(".box").eq(1).find(".name").val(data[n].type);
-                                    $(".boxpac").eq(n).find(".box").eq(2).find(".name").val(data[n].lossNumber);
-                                    $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(0).val(data[n].min+"~"+data[n].max);
-                                    $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(1).val(data[n].sum);
-                                    if(n<=data.length-2){
-                                        $(".addmore").triggerHandler("click");
-                                    }
-                                }
+                        var data = $.parseJSON(data);
+                        for(var n = 0;n < data.length;n++){
+                            $(".boxpac").eq(n).find(".box").eq(1).find(".name").val(data[n].type);
+                            $(".boxpac").eq(n).find(".box").eq(2).find(".name").val(data[n].lossNumber);
+                            $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(0).val(data[n].min+"~"+data[n].max);
+                            $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(1).val(data[n].sum);
+                            if(n<=data.length-2){
+                                $(".addmore").triggerHandler("click");
                             }
-                        })
+                        }
                     }
                 }
             });
