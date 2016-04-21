@@ -2,10 +2,13 @@
  * Created by tan on 16/3/29.
  */
 $(function(){
+    var url = window.location.search;
+    var id = url.substr(4,url);
     $.ajax({
-        type:"POST",
-        url:"all",
-        datatype:"json",
+        "type":"POST",
+        "url":"all",
+        "datatype":"json",
+        "data":{"id":id},
         success:function(data){
             var data = $.parseJSON(data);
             for(var h= 0,pg=0;h<data.length;h++){
