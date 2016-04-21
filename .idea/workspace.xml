@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd320b68-2256-49b6-875b-25f0cd9cf0a7" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/cubmaster-云盘主页.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/cubmaster-云盘主页.js" afterPath="$PROJECT_DIR$/js/cubmaster-云盘主页.js" />
     </list>
     <ignored path="cubmaster-up.iws" />
@@ -30,8 +28,8 @@
           <file leaf-file-name="cubmaster-云盘主页.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cubmaster-云盘主页.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.6023055">
-                  <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+                <state vertical-scroll-proportion="0.41210374">
+                  <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -44,18 +42,19 @@
           <file leaf-file-name="cubmaster-云盘主页.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/cubmaster-云盘主页.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.84827584">
-                  <caret line="261" column="39" selection-start-line="261" selection-start-column="39" selection-end-line="261" selection-end-column="39" />
+                <state vertical-scroll-proportion="0.39448276">
+                  <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#37#0" expanded="false" />
-                    <element signature="e#99#773#0" expanded="false" />
-                    <element signature="e#810#1622#0" expanded="false" />
-                    <element signature="e#1659#1858#0" expanded="false" />
-                    <element signature="e#1895#2531#0" expanded="false" />
-                    <element signature="e#2004#2455#0" expanded="false" />
-                    <element signature="e#2568#3366#0" expanded="false" />
-                    <element signature="e#3403#3601#0" expanded="false" />
-                    <element signature="e#3661#3679#0" expanded="false" />
+                    <element signature="e#162#836#0" expanded="false" />
+                    <element signature="e#873#1685#0" expanded="false" />
+                    <element signature="e#1958#2594#0" expanded="false" />
+                    <element signature="e#2067#2518#0" expanded="false" />
+                    <element signature="e#2631#3429#0" expanded="false" />
+                    <element signature="e#3466#3664#0" expanded="false" />
+                    <element signature="e#3724#3742#0" expanded="false" />
+                    <element signature="e#4677#5017#0" expanded="false" />
+                    <element signature="e#5043#5269#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -212,7 +211,7 @@
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/计算器" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
@@ -406,7 +405,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -425,14 +424,15 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
-            <element signature="e#99#773#0" expanded="false" />
-            <element signature="e#810#1622#0" expanded="false" />
-            <element signature="e#1659#1858#0" expanded="false" />
-            <element signature="e#1895#2531#0" expanded="false" />
-            <element signature="e#2004#2455#0" expanded="false" />
-            <element signature="e#2568#3366#0" expanded="false" />
-            <element signature="e#3403#3601#0" expanded="false" />
-            <element signature="e#3661#3679#0" expanded="false" />
+            <element signature="e#162#836#0" expanded="false" />
+            <element signature="e#873#1685#0" expanded="false" />
+            <element signature="e#1958#2594#0" expanded="false" />
+            <element signature="e#2067#2518#0" expanded="false" />
+            <element signature="e#2631#3429#0" expanded="false" />
+            <element signature="e#3466#3664#0" expanded="false" />
+            <element signature="e#3724#3742#0" expanded="false" />
+            <element signature="e#4677#5017#0" expanded="false" />
+            <element signature="e#5043#5269#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -453,29 +453,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cubmaster-云盘主页.html">
+    <entry file="file://$PROJECT_DIR$/js/cubmaster-云盘主页.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6023055">
-          <caret line="42" column="40" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
-          <folding />
+        <state vertical-scroll-proportion="0.39448276">
+          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+            <element signature="e#162#836#0" expanded="false" />
+            <element signature="e#873#1685#0" expanded="false" />
+            <element signature="e#1958#2594#0" expanded="false" />
+            <element signature="e#2067#2518#0" expanded="false" />
+            <element signature="e#2631#3429#0" expanded="false" />
+            <element signature="e#3466#3664#0" expanded="false" />
+            <element signature="e#3724#3742#0" expanded="false" />
+            <element signature="e#4677#5017#0" expanded="false" />
+            <element signature="e#5043#5269#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/cubmaster-云盘主页.js">
+    <entry file="file://$PROJECT_DIR$/cubmaster-云盘主页.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84827584">
-          <caret line="261" column="39" selection-start-line="261" selection-start-column="39" selection-end-line="261" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-            <element signature="e#99#773#0" expanded="false" />
-            <element signature="e#810#1622#0" expanded="false" />
-            <element signature="e#1659#1858#0" expanded="false" />
-            <element signature="e#1895#2531#0" expanded="false" />
-            <element signature="e#2004#2455#0" expanded="false" />
-            <element signature="e#2568#3366#0" expanded="false" />
-            <element signature="e#3403#3601#0" expanded="false" />
-            <element signature="e#3661#3679#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.41210374">
+          <caret line="13" column="10" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>

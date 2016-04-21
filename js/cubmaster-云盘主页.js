@@ -2,7 +2,8 @@
  * Created by tan on 16/4/15.
  */
 $(function(){
-    var time;var id;
+    console.log($(".leftPanel").text())
+    var time;var id;var $oldpath;var $path;
     var my_options_time = {
         "type":"POST",
         "url":"getTime",
@@ -151,7 +152,7 @@ $(function(){
         time=$path;
         $oldpath = $('.path-name').text();
         $(".list-holder ul").empty();
-        if($(document).find('.path-name').text()=="我的文件") {
+        if($oldpath=="我的文件") {
             $.ajax(my_options_name);//点击文件之后第二次加载我的文件名
         }
         else{
@@ -160,7 +161,7 @@ $(function(){
     }
     function Loadinfopg(){//对于文件详情的请求
         id = $(this).data("ID");
-        if($(document).find('.path-name').text()=="我的文件") {
+        if($oldpath=="我的文件") {
             $.ajax(my_options_info);//点击文件之后第二次加载我的文件名
         }
         else{
