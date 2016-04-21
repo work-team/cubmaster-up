@@ -1,0 +1,147 @@
+body,
+html
+{
+    width: 100%;
+    height: 100%;
+    background-color: #C6CACF;
+}
+a{text-decoration: none}
+.head{
+    width: 100%;
+    height: 57px;
+    line-height:57px;
+    background: #3083eb;
+    a:visited{color: #b0d3ff};
+    li{
+        float: right;
+        font-size: 14px;
+        color: #b0d3ff;
+        margin-right: 20px;
+    }
+    .logo{
+        float: left;
+        font-size: 24px;
+        margin-left: 20px;
+        color: #fff;
+    }
+}
+.container
+{
+    font-size: 16px;
+
+    position: fixed;
+    z-index: 99;
+    top: 57px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+
+    width: 1170px;
+    margin: auto;
+
+    background-color: #fff;
+    .close
+    {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+
+        cursor: pointer;
+        img
+        {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .box-container
+    {
+        overflow: hidden;
+    }
+    .box
+    {
+        font-weight: bolder;
+
+        display: inline-block;
+        float: left;
+
+        margin-left: 20px;
+
+        h2
+        {
+            color: #337ab7;
+        }
+        div
+        {
+            margin-top: 20px;
+        }
+    }
+    .box + .box
+    {
+        margin-top: 42px;
+        margin-left: 350px;
+    }
+    .lie-container
+    {
+        overflow: hidden;
+
+        margin-top: 20px;
+        span
+        {
+            font-weight: bold;
+
+            margin-left: 20px;
+        }
+        .inf
+        {
+            overflow: hidden;
+            ul
+            {
+                overflow: hidden;
+            }
+
+            li
+            {
+                font-size: 14px;
+
+                position: relative;
+
+                display: inline-block;
+                float: left;
+
+                width: 130px;
+                margin-top: 10px;
+                margin-left: 130px;
+
+                list-style: none;
+                span
+                {
+                    position: absolute;
+                    right: 0;
+
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+    .show-container
+    {
+        margin-top: 15px;
+        span
+        {
+            font-weight: bold;
+
+            margin-left: 20px;
+        }
+        button
+        {
+            width: 85px;
+            height: 38px;
+            margin-left: 50px;
+
+            border: none;
+            border-radius: 5px;
+            background-color: #c0c0c0;
+        }
+    }
+}
