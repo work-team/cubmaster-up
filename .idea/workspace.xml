@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="bd320b68-2256-49b6-875b-25f0cd9cf0a7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/cubmaster-数据展示.css" afterPath="$PROJECT_DIR$/css/cubmaster-数据展示.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/cubmaster-数据展示.less" afterPath="$PROJECT_DIR$/css/cubmaster-数据展示.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cubmaster-上传表单.html" afterPath="$PROJECT_DIR$/cubmaster-上传表单.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/cubmaster-上传表单.js" afterPath="$PROJECT_DIR$/js/cubmaster-上传表单.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/cubmaster-数据展示.js" afterPath="$PROJECT_DIR$/js/cubmaster-数据展示.js" />
     </list>
@@ -26,7 +25,7 @@
     <favorites_list name="cubmaster-up" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.26796874">
+    <splitter split-orientation="horizontal" split-proportion="0.48828125">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="cubmaster-云盘主页.html" pinned="false" current-in-tab="false">
@@ -39,22 +38,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cubmaster-数据展示.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="cubmaster-数据展示.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/cubmaster-数据展示.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.12391931">
+                <state vertical-scroll-proportion="-2.7741935">
                   <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="cubmaster-上传表单.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="cubmaster-上传表单.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cubmaster-上传表单.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-                  <folding />
+                <state vertical-scroll-proportion="0.41210374">
+                  <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -86,19 +87,7 @@
             <entry file="file://$PROJECT_DIR$/js/cubmaster-数据展示.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#165#175#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cubmaster-数据展示.less" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/css/cubmaster-数据展示.less">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-7.096774">
-                  <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+                  <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -107,8 +96,8 @@
           <file leaf-file-name="cubmaster-上传表单.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/js/cubmaster-上传表单.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="3.7931035">
-                  <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+                <state vertical-scroll-proportion="-0.060689654">
+                  <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -138,11 +127,11 @@
         <option value="$PROJECT_DIR$/cubmaster-云盘主页.html" />
         <option value="$PROJECT_DIR$/css/cubmaster-云盘主页.less" />
         <option value="$PROJECT_DIR$/css/cubmaster-上传表单.less" />
-        <option value="$PROJECT_DIR$/cubmaster-上传表单.html" />
         <option value="$PROJECT_DIR$/js/cubmaster-云盘主页.js" />
         <option value="$PROJECT_DIR$/cubmaster-数据展示.html" />
         <option value="$PROJECT_DIR$/css/cubmaster-数据展示.less" />
         <option value="$PROJECT_DIR$/js/cubmaster-数据展示.js" />
+        <option value="$PROJECT_DIR$/cubmaster-上传表单.html" />
         <option value="$PROJECT_DIR$/js/cubmaster-上传表单.js" />
       </list>
     </option>
@@ -478,7 +467,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -503,9 +494,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#165#175#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -564,14 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cubmaster-上传表单.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cubmaster-云盘主页.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-16.32258">
@@ -582,7 +563,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cubmaster-数据展示.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12391931">
+        <state vertical-scroll-proportion="-2.7741935">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
@@ -593,16 +574,6 @@
         <state vertical-scroll-proportion="-7.096774">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/cubmaster-数据展示.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="e#165#175#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -623,10 +594,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/cubmaster-数据展示.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="44" column="10" selection-start-line="44" selection-start-column="10" selection-end-line="44" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cubmaster-上传表单.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41210374">
+          <caret line="27" column="36" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#form#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/cubmaster-上传表单.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.7931035">
-          <caret line="151" column="25" selection-start-line="151" selection-start-column="25" selection-end-line="151" selection-end-column="25" />
+        <state vertical-scroll-proportion="-0.060689654">
+          <caret line="40" column="27" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding />
         </state>
       </provider>

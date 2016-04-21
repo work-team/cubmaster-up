@@ -3,6 +3,17 @@
  */
 $(function(){
     var $info ="数值";
+    var $addheight = $(".boxpac").height();
+    var $conheight = $(".container").height();
+    var $moreheight = $(".more-info").height();
+    $(".boxpac").find(".addmore").text("删除");
+    $(".boxpac").find(".addmore").addClass("rem");
+    var $boxpac1 = $("#more_info").html();
+    $(".boxpac").find(".addmore").text("添加");
+    $(".boxpac").find(".addmore").removeClass("rem");
+    var zIndex = 99;
+    var lie = 1;
+
     $("#logo").on('click',function(){
         location.href = "cubmaster-云盘主页.html"
     });
@@ -15,15 +26,21 @@ $(function(){
     });
     $('.show').on('click','div',function(event){
         var $a = $(this).text();
+        console.log($a)
         var $add = $(this).parents(".select").find(".add");
         $add.text($a);
         $add.val($a);
         $(this).parents(".show").slideToggle(50);
         event.stopPropagation();
+    });
+    $("#show_spe").on('click','div',function(){
         $("#nebox").siblings().remove();
         $(".more-info").height($moreheight);
         $(".container").height($conheight);
-        $info = $a;
+        $info = $(this).text();
+        console.log($info);
+        lie = 1;
+        event.stopPropagation();
     });
     $('.show').on('mouseover','div',function(){
         var $add = $(this).parent().siblings();
@@ -41,16 +58,7 @@ $(function(){
     });
 
 
-    var $addheight = $(".boxpac").height();
-    var $conheight = $(".container").height();
-    var $moreheight = $(".more-info").height();
-    $(".boxpac").find(".addmore").text("删除");
-    $(".boxpac").find(".addmore").addClass("rem");
-    var $boxpac1 = $("#more_info").html();
-    $(".boxpac").find(".addmore").text("添加");
-    $(".boxpac").find(".addmore").removeClass("rem");
-    var zIndex = 99;
-    var lie = 1;
+
     $(".addmore").click(function(){
         var lielength = null;
         function Jug(){

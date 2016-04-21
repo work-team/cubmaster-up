@@ -6,7 +6,6 @@ $(function(){
     var id = url.substr(4,url.length);
     var $long;
     var $pg_num;
-<<<<<<< HEAD
     $.ajax({
         "type":"POST",
         "url":"getInfo",
@@ -47,8 +46,7 @@ $(function(){
         error:function(){
             alert("数据读取错误");
         }
-    })
-=======
+    });
     //$.ajax({
     //    "type":"POST",
     //    "url":"getInfo",
@@ -88,7 +86,6 @@ $(function(){
     //        alert("数据读取错误");
     //    }
     //})
->>>>>>> d4dc08a2166833b3f44950f67e42de0f0500be4c
 
 
 
