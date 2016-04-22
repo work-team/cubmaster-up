@@ -56,7 +56,7 @@ a {
 }
 .container .box + .box {
   margin-top: 42px;
-  margin-left: 350px;
+  margin-left: 300px;
 }
 .container .lie-container {
   overflow: hidden;

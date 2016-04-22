@@ -2,7 +2,7 @@
  * Created by tan on 16/4/15.
  */
 $(function(){
-    var time;var id;var $oldpath;var $path;
+    var time;var id;var downpath;var $oldpath;var $path;
     var my_options_time = {
         "type":"POST",
         "url":"getTime",
@@ -202,7 +202,6 @@ $(function(){
             });
     });//文件mouseout事件
     $(document).on('click','.file',function(){//文件获得焦点事件
-        $(".sp").css("display","inline-block");
         $(this).css({
             "background":"#eff3f9",
             "border":"1px solid #bcccde"
@@ -212,20 +211,61 @@ $(function(){
             "border": "1px solid #fff"
         });
     });
+    $(document).on('mouseover','.package',function(){
+        if($(this).attr('status')!='active')
+            $(this).css({
+                "background":"#F6F8FD",
+                "border": "1px solid #D3DFEC"
+            });
+    });//文件mouseover事件
+    $(document).on('mouseout','.package',function(){
+        if($(this).attr('status')=='inactive')
+            $(this).css({
+                "background":"#fff",
+                "border": "1px solid #fff"
+            });
+    });//文件mouseout事件
+    $(document).on('click','.package',function(){//文件获得焦点事件
+        $(".sp").css("display","inline-block");
+        downpath = $(this).data("PATH");
+        $(this).css({
+            "background":"#eff3f9",
+            "border":"1px solid #bcccde"
+        }).attr('status','active');
+        $(this).siblings().attr('status','inactive').css({
+            "background":"#fff",
+            "border": "1px solid #fff"
+        });
+
+    });
 
 
 
     $(document).on('dblclick','.file',Loadinfo);//文件双击进入事件
     $(document).on('click','.date',Loadinfo);//文件单击标签进入事件
-    $(document).on('dblclick','.file',Loadinfopg);//文件双击查看详情进入事件
-    $(document).on('click','.date',Loadinfopg);//文件单击查看详情进入事件
+    $(document).on('dblclick','.package',Loadinfopg);//文件双击查看详情进入事件
+    $(document).on('click','.name',Loadinfopg);//文件单击查看详情进入事件
     $('body').on('click',function(){
         $(".file").css({
             "background":"#fff",
             "border": "1px solid #fff"
         }).attr('status','inactive');
+        $(".package").css({
+            "background":"#fff",
+            "border": "1px solid #fff"
+        }).attr('status','inactive');
         $(".sp").css("display","none");
-        console.log(1)
+    });
+    $("#download").on('click',function(){
+        $.ajax({
+            "type":"POST",
+            "url":"",
+            "dataType":"json",
+            "data":downpath,
+            "success":function(data){
+                alert("success");
+            }
+        })
     });
     $(document).on('click','.myback',function(){
         $(".list-holder ul").empty();
@@ -238,9 +278,9 @@ $(function(){
         $.ajax(pb_options_time);
     });//点击返回公共文件
     $("#uplist").on("click",function(){
-        location.href = "cubmaster-上传表单.html"
+        window.open = "cubmaster-上传表单.html"
     });
     $("#logo").on('click',function(){
-        location.href = "cubmaster-云盘主页.html"
+        window.open = "cubmaster-云盘主页.html"
     });
 });
