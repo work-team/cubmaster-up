@@ -144,7 +144,7 @@ $(function(){
     }
     function Loadinfopg(){//对于文件详情的请求
         id = $(this).data("ID");
-        location.href = "cubmaster-数据展示.html?id="+id;
+        window.open("cubmaster-数据展示.html?id="+id);
     }
     $(".leftPanel").css({height:$pgheight});
     $(".mainPanel").css({height:$pgheight});
@@ -278,9 +278,9 @@ $(function(){
         $.ajax(pb_options_time);
     });//点击返回公共文件
     $("#uplist").on("click",function(){
-        window.open = "cubmaster-上传表单.html"
+        window.open("cubmaster-上传表单.html");
     });
     $("#logo").on('click',function(){
-        window.open = "cubmaster-云盘主页.html"
+        location.href = "cubmaster-云盘主页.html"
     });
 });

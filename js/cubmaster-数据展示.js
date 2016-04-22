@@ -42,7 +42,7 @@ $(function(){
         "type":"POST",
         "url":"getInfo",
         "datatype":"json",
-        "data":{"datasetID":id},
+        "data":{"datasetId":id},
         success:function(data){
             data = $.parseJSON(data);
             $pg_num = 1;
@@ -58,7 +58,7 @@ $(function(){
             var $infheight = $(".inf").height();
             for (var i = 0, j = 0; i <= (data[0].attributes.length * 2 - 2); i = i + 2, j++) {
                 if ((data[0].attributes.length - j) > 1) {
-                    $(".container").css({"height":"+="+$infheight});
+                    $(".container").css({"height":"+="+2*$infheight});
                     $(".inf").append($inf);
                 }
                 var $li_first = $(".inf").find("ul").eq(i).find("li");

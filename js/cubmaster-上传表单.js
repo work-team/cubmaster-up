@@ -24,25 +24,21 @@ $(function(){
         });
         $(this).find(".add").empty();
     });
-    $('.show').on('click','div',function(event){
+    $(document).on('click','.show div',function(event){
         var $a = $(this).text();
-        console.log($a)
         var $add = $(this).parents(".select").find(".add");
         $add.text($a);
         $add.val($a);
-        $(this).parents(".show").slideToggle(50);
-        event.stopPropagation();
     });
     $("#show_spe").on('click','div',function(){
         $("#nebox").siblings().remove();
         $(".more-info").height($moreheight);
         $(".container").height($conheight);
         $info = $(this).text();
-        console.log($info);
+        $("#nebox").find('.add').empty();
         lie = 1;
-        event.stopPropagation();
     });
-    $('.show').on('mouseover','div',function(){
+    $(document).on('mouseover','.show div',function(){
         var $add = $(this).parent().siblings();
         $add.empty();
         $(this).css({
@@ -50,14 +46,12 @@ $(function(){
             "background":"#0f5a9a"
         })
     });
-    $('.show').on('mouseout','div',function(){
+    $(document).on('mouseout','.show div',function(){
         $(this).css({
             "color":"#000",
             "background":"#fff"
         })
     });
-
-
 
     $(".addmore").click(function(){
         var lielength = null;
@@ -184,26 +178,8 @@ $(function(){
             });
         }
     }
-    var option = {
-        target:"#form",
-        url:"FileUpLoad",
-        type:"POST",
-        clearForm:true,
-        resetForm:true,
-        timeout:3000,
-        beforeSubmit:function(formData,jqForm,options){
-            for(var i=0;i<formData.length;i++){
-                if(!formData[i].value){
-                    alert("表单内容不可为空");
-                    return false;
-                }
-            }
-        },
-        success:function(){
-            alert("成功提交!")
-        }
-    };
+
     $("#form").submit(function () {
-        $(this).ajaxSubmit(option);
+        $(this).submit();
     });
 });
