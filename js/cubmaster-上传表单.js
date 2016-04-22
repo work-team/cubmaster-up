@@ -179,7 +179,4 @@ $(function(){
         }
     }
 
-    $("#form").submit(function () {
-        $(this).submit();
-    });
 });
