@@ -36,7 +36,7 @@ a {
   bottom: 0;
   left: 0;
   width: 1170px;
-  margin: auto;
+  margin: 40px auto;
   background-color: #fff;
 }
 .container .box-container {
@@ -65,9 +65,6 @@ a {
 .container .lie-container span {
   font-weight: bold;
   margin-left: 20px;
-}
-.container .lie-container .inf {
-  overflow: hidden;
 }
 .container .lie-container .inf ul {
   overflow: hidden;

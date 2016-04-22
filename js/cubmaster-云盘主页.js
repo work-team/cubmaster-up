@@ -33,6 +33,7 @@ $(function(){
             for(var i = 0;i<$filelength;i++){
                 $(".list-holder ul").append("<li class='package' status='inactive'><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
                 $(".package").eq(i).data("ID",data[i].id);
+                $(".package").eq(i).data("PATH",data[i].path);
             }
             $('.path-info').html("<div class='new-path'><span class='back myback'>返回上一级</span><span class='old-path myback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
@@ -70,6 +71,7 @@ $(function(){
             for(var i = 0;i<$filelength;i++){
                 $(".list-holder ul").append("<li class='package' status='inactive' data><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
                 $(".package").eq(i).data("ID",data[i].id);
+                $(".package").eq(i).data("PATH",data[i].path);
             }
             $('.path-info').html("<div class='new-path'><span class='back pbback'>返回上一级</span><span class='old-path pbback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
