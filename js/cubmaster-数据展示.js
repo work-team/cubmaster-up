@@ -6,6 +6,7 @@ $(function(){
     var id = url.substr(4,url.length);
     var $long;
     var $pg_num;
+    var page = 1;
 
     //var data = [{
     //    "area": "无",
@@ -38,6 +39,7 @@ $(function(){
     //        "attributeRange": "无"
     //    }]
     //}];
+
     $.ajax({
         "type":"POST",
         "url":"getInfo",
@@ -73,11 +75,47 @@ $(function(){
                 $li_second.eq(3).find("span").text(data[0].attributes[j].attributeType);
             }
         },
-        error:function(){
+        "error":function(){
             alert("数据读取错误");
         }
-    })
-
-
-
+    });
+    $("#open").on('click', function() {
+        $("#open").css("display","none");
+        $.ajax({
+            "type":"POST",
+            "url":"",
+            "data":page,
+            "dataType":"json",
+            "success":function(data){
+                $("#para").append(data);
+                $(".content").slideToggle();
+            },
+            "error":function(){
+                alert("无法展开资源");
+            }
+        });
+    });
+    var pageoption = {
+        "type":"POST",
+        "url":"",
+        "data":page,
+        "dataType":"json",
+        "success":function(data){
+            $("#para").empty();
+            $("#para").append(data);
+        },
+        "error":function(){
+            alert("没有更多了!");
+        }
+    };
+    $("#next").on('click',function(){
+        page++;
+        $.ajax(pageoption);
+    });
+    $("#last").on('click',function(){
+        if(page>1){
+            page--;
+            $.ajax(pageoption);
+        }
+    });
 });

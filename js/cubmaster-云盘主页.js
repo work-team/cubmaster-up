@@ -2,7 +2,40 @@
  * Created by tan on 16/4/15.
  */
 $(function(){
-    var time;var id;var downpath;var $oldpath;var $path;
+    var time;var id;var downpath;var $oldpath;var $path;var $month;
+
+    ////////////////////////////////////////////////测试数据区域
+
+    //var data = [
+    //    {
+    //        time:2016,
+    //        month:[01,02,04]
+    //    },
+    //    {
+    //        time:2015,
+    //        month:[01,03,05]
+    //    }
+    //];
+    //var $timelength = data.length;
+    //for(var i = 0;i<$timelength;i++){
+    //    $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
+    //    $(".file").eq(i).data("MONTH",data[i].month);
+    //}
+    //if($(".path-name").length==0){
+    //    $('.path-info').append(' <span class="path-name">我的文件</span>');
+    //}
+    //var data1 = [
+    //    {
+    //        name:"xx"
+    //    },
+    //    {
+    //        name:"yy"
+    //    }
+    //];
+
+    /////////////////////////////////////////////////测试数据趋于
+
+
     var my_options_time = {
         "type":"POST",
         "url":"getTime",
@@ -13,6 +46,7 @@ $(function(){
             var $timelength = data.length;
             for(var i = 0;i<$timelength;i++){
                 $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
+                $(".file").eq(i).data("MONTH",data[i].month);
             }
             if($(".path-name").length==0){
             	$('.path-info').append(' <span class="path-name">我的文件</span>');
@@ -51,6 +85,7 @@ $(function(){
             var $timelength = data.length;
             for(var i = 0;i<$timelength;i++){
                 $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
+                $(".file").eq(i).data("MONTH",data[i].month);
             }
             if($(".path-name").length==0){
             $('.path-info').append(' <span class="path-name">公共文件</span>');
@@ -131,16 +166,38 @@ $(function(){
     $pgheight = $(window).height() - 57;
     $lsheight = $(window).height() - 156;
     function Loadinfo(){//对于文件信息的请求
-        $path = $(this).find(".date").text();
+        $path = $path+"-"+"0"+$(this).find(".datemonth").text();
         time=$path;
-        $oldpath = $('.path-name').text();
         $(".list-holder ul").empty();
         if($oldpath=="我的文件") {
             $.ajax(my_options_name);//点击文件之后第二次加载我的文件名
+
+            ///////////////////////////////测试数据范区域
+
+            //var $filelength = data1.length;
+            //for(var i = 0;i<$filelength;i++){
+            //    $(".list-holder ul").append("<li class='package' status='inactive'><div class='file-txt-bg'></div><div class='name'>"+data1[i].name+"</div></li>");
+            //    $(".package").eq(i).data("ID",data[i].id);
+            //    $(".package").eq(i).data("PATH",data[i].path);
+            //}
+            //$('.path-info').html("<div class='new-path'><span class='back myback'>返回上一级</span><span class='old-path myback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
+
+            ///////////////////////////////测试数据区域
         }
         else{
             $.ajax(pb_options_name);//点击文件之后第二次加载公共文件名
         }
+    }
+    function  Loadinfomonth(){
+        $month = $(this).data("MONTH");
+        var $monthlength = $month.length;
+        $(".list-holder ul").empty();
+        for(var i = 0;i<$monthlength;i++){
+            $(".list-holder ul").append("<li class='filemonth' status='inactive'><div class='file-bg'></div><div class='datemonth'>"+$month[i]+"</div></li>");
+        }
+        $oldpath = $(".path-name").text();
+        $path = $(this).find(".date").text();
+        $('.path-info').html("<div class='new-path'><span class='back myback'>返回上一级</span><span class='old-path myback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
     }
     function Loadinfopg(){//对于文件详情的请求
         id = $(this).data("ID");
@@ -211,20 +268,44 @@ $(function(){
             "border": "1px solid #fff"
         });
     });
-    $(document).on('mouseover','.package',function(){
+    $(document).on('mouseover','.filemonth',function(){
         if($(this).attr('status')!='active')
             $(this).css({
                 "background":"#F6F8FD",
                 "border": "1px solid #D3DFEC"
             });
     });//文件mouseover事件
-    $(document).on('mouseout','.package',function(){
+    $(document).on('mouseout','.filemonth',function(){
         if($(this).attr('status')=='inactive')
             $(this).css({
                 "background":"#fff",
                 "border": "1px solid #fff"
             });
     });//文件mouseout事件
+    $(document).on('click','.filemonth',function(){//文件获得焦点事件
+        $(this).css({
+            "background":"#eff3f9",
+            "border":"1px solid #bcccde"
+        }).attr('status','active');
+        $(this).siblings().attr('status','inactive').css({
+            "background":"#fff",
+            "border": "1px solid #fff"
+        });
+    });
+    $(document).on('mouseover','.package',function(){
+        if($(this).attr('status')!='active')
+            $(this).css({
+                "background":"#F6F8FD",
+                "border": "1px solid #D3DFEC"
+            });
+    });//文件信息mouseover事件
+    $(document).on('mouseout','.package',function(){
+        if($(this).attr('status')=='inactive')
+            $(this).css({
+                "background":"#fff",
+                "border": "1px solid #fff"
+            });
+    });//文件信息mouseout事件
     $(document).on('click','.package',function(){//文件获得焦点事件
         $(".sp").css("display","inline-block");
         downpath = $(this).data("PATH");
@@ -241,10 +322,14 @@ $(function(){
 
 
 
-    $(document).on('dblclick','.file',Loadinfo);//文件双击进入事件
-    $(document).on('click','.date',Loadinfo);//文件单击标签进入事件
+    $(document).on('dblclick','.file',Loadinfomonth);//文件双击进入事件
+    $(document).on('click','.date',Loadinfomonth);//文件单击标签进入事件
+    $(document).on('dblclick','.filemonth',Loadinfo);//文件双击进入事件
+    $(document).on('click','.datemonth',Loadinfo);//文件单击标签进入事件
     $(document).on('dblclick','.package',Loadinfopg);//文件双击查看详情进入事件
     $(document).on('click','.name',Loadinfopg);//文件单击查看详情进入事件
+
+
     $('body').on('click',function(){
         $(".file").css({
             "background":"#fff",
@@ -254,9 +339,13 @@ $(function(){
             "background":"#fff",
             "border": "1px solid #fff"
         }).attr('status','inactive');
+        $(".filemonth").css({
+            "background":"#fff",
+            "border": "1px solid #fff"
+        }).attr('status','inactive');
         $(".sp").css("display","none");
     });
-    $("#download").on('click',function(){
+    $("#download").on('click',function(){//下载
         $.ajax({
             "type":"POST",
             "url":"",
@@ -267,6 +356,7 @@ $(function(){
             }
         })
     });
+
     $(document).on('click','.myback',function(){
         $(".list-holder ul").empty();
         $(".new-path").remove();
@@ -277,6 +367,8 @@ $(function(){
         $(".path-info").empty();
         $.ajax(pb_options_time);
     });//点击返回公共文件
+
+
     $("#uplist").on("click",function(){
         window.open("cubmaster-上传表单.html");
     });

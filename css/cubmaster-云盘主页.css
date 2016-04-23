@@ -233,7 +233,8 @@ ul {
   padding-top: 10px;
 }
 .mainPanel .file-list .file,
-.mainPanel .file-list .package {
+.mainPanel .file-list .package,
+.mainPanel .file-list .filemonth {
   width: 114px;
   height: 138px;
   float: left;
@@ -257,7 +258,8 @@ ul {
   background-image: url("../img/file-txt-bg.png");
 }
 .mainPanel .file-list .date,
-.mainPanel .file-list .name {
+.mainPanel .file-list .name,
+.mainPanel .file-list .datemonth {
   text-align: center;
   font-size: 12px;
   height: 23px;

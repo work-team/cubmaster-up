@@ -101,3 +101,23 @@ a {
   border-radius: 5px;
   background-color: #c0c0c0;
 }
+.container .show-container #para {
+  padding: 10px 20px 0px 20px;
+  word-break: break-all;
+}
+.container .show-container #last,
+.container .show-container #next {
+  width: 60px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 12px;
+  position: relative;
+  left: 50%;
+  margin-left: 0;
+}
+.container .show-container #last {
+  margin-left: -60px;
+}
+.container .show-container .content {
+  display: none;
+}
