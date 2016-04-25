@@ -168,7 +168,7 @@ $(function(){
                                  	$(".boxpac").eq(n).find(".box").eq(1).find(".add").val("离散");
                                  	$(".boxpac").eq(n).find(".box").eq(1).find(".add").text("离散");
                                 }
-                            $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(1).val(data[n].sum);
+                            $(".boxpac").eq(n).find(".box").eq(3).find(".name").eq(1).val(data[n].order);
                             if(n<=data.length-2){
                                 $(".addmore").triggerHandler("click");
                             }

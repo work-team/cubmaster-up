@@ -42,11 +42,12 @@ $(function(){
         "dataType":"json",
         "data": {"userId":"1"},
         "success":function(data){
-            var data = $.parseJSON(data.content);
-            var $timelength = data.length;
+
+            var $timelength = data.content.length;
+            
             for(var i = 0;i<$timelength;i++){
-                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
-                $(".file").eq(i).data("MONTH",data[i].month);
+                $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data.content[i].time+"</div></li>");
+                $(".file").eq(i).data("MONTH",data.content[i].month);
             }
             if($(".path-name").length==0){
             	$('.path-info').append(' <span class="path-name">我的文件</span>');
@@ -68,6 +69,7 @@ $(function(){
                 $(".list-holder ul").append("<li class='package' status='inactive'><div class='file-txt-bg'></div><div class='name'>"+data[i].name+"</div></li>");
                 $(".package").eq(i).data("ID",data[i].id);
                 $(".package").eq(i).data("PATH",data[i].path);
+                
             }
             $('.path-info').html("<div class='new-path'><span class='back myback'>返回上一级</span><span class='old-path myback'>"+$oldpath+"</span><span class='path'>>&nbsp;"+$path+"</span></div>");
         },
@@ -81,7 +83,7 @@ $(function(){
         "url":"getTime",
         "dataType":"json",
         "success":function(data){
-        	 var data = $.parseJSON(data.content);
+        	 var data = data.content;
             var $timelength = data.length;
             for(var i = 0;i<$timelength;i++){
                 $(".list-holder ul").append("<li class='file' status='inactive'><div class='file-bg'></div><div class='date'>"+data[i].time+"</div></li>");
@@ -166,8 +168,7 @@ $(function(){
     $pgheight = $(window).height() - 57;
     $lsheight = $(window).height() - 156;
     function Loadinfo(){//对于文件信息的请求
-        $path = $path+"-"+"0"+$(this).find(".datemonth").text();
-        time=$path;
+        time=$(this).find(".datemonth").text();
         $(".list-holder ul").empty();
         if($oldpath=="我的文件") {
             $.ajax(my_options_name);//点击文件之后第二次加载我的文件名
@@ -346,15 +347,8 @@ $(function(){
         $(".sp").css("display","none");
     });
     $("#download").on('click',function(){//下载
-        $.ajax({
-            "type":"POST",
-            "url":"",
-            "dataType":"json",
-            "data":downpath,
-            "success":function(data){
-                alert("success");
-            }
-        })
+window.open("download?img="+downpath)
+
     });
 
     $(document).on('click','.myback',function(){

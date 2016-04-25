@@ -8,12 +8,13 @@
 </head>
 <body>
     <div class="head">
-        <li class="logo" id="logo">cub云盘</li>
+        <li class="logo">cubmaster云盘</li>
         <li><a href="">退出</a></li>
         <li><a href="">欢迎admin</a></li>
+        <li><a href="">上传</a></li>
     </div>
     <div class="container">
-        <form id="form" action="submit" enctype="multipart/form-data" method="post">
+        <form id="form" enctype="multipart/form-data" method="post">
             <div class="data-name">
                 <span class="title">数据名称:</span><input type="text" name="datasetName" class="name" id="data_name">
             </div>
@@ -22,14 +23,14 @@
             </div>
             <div class="select">
                 <span class="title">数据类型:</span>
-                <input type="hidden" class="add" name="datasetType" id="numtext" value="数值">
+                <input type="hidden" class="add" name="datasetType" id="numtext">
                 <div class="choose" style="z-index: 99" tabindex="1">
-                    <div class="add" id="data_type">数值</div>
-                    <div class="show" id="show_spe">
+                    <div class="add" id="data_type">&nbsp;</div>
+                    <div class="show">
                         <div value="0">数值</div>
                         <div value="1">文本</div>
                     </div>
-                    <img src="img/down.png">
+                    <img src="down.png">
                 </div>
 
             </div>
@@ -42,7 +43,7 @@
                         <div value="分类算法">分类算法</div>
                         <div value="聚类算法">聚类算法</div>
                     </div>
-                    <img src="img/down.png">
+                    <img src="down.png">
                 </div>
             </div>
             <div class="select">
@@ -54,15 +55,15 @@
                         <div value="java">java</div>
                         <div value="hadoop">hadoop</div>
                     </div>
-                    <img src="img/down.png">
+                    <img src="down.png">
                 </div>
             </div>
             <div class="data-name area" id="area">
                 <span class="title">范围:</span><input type="text" name="area" class="name" placeholder="数据集来源的领域">
                 <div class="up-package">
-                    <span class="title1">上传文件:</span>
+                    <span class="title1">测试数据:</span>
                     <a href="#"><div>点击上传文件</div><input id="file" name="file" type="file" class="file"></a>
-                   <button id="bar" type="button" status="1">开始</button> <span id="show" style="float: right;"></span>
+                    <span id="show"></span><button id="bar" type="button" status="0">暂停</button>
                 </div>
             </div>
 
@@ -81,7 +82,7 @@
                                     <div value="0">原始字段</div>
                                     <div value="1">结果字段</div>
                                 </div>
-                                <img src="img/down.png">
+                                <img src="down.png">
                             </div>
                         </div>
                     </div>
@@ -92,7 +93,7 @@
                         <div class="select another-select">
                             <span class="title">字段特征:</span>
                             <div class="choose choose-spe" tabindex="1">
-                                <input type="hidden" class="add" name="attribute_character">
+                             <input type="hidden" class="add" name="attribute_character">
                                 <div class="add">&nbsp;</div>
                                 <div class="show">
                                     <div value="1">离散</div>
@@ -100,7 +101,7 @@
                                     <div value="3">布尔</div>
                                     <div value="4">复杂</div>
                                 </div>
-                                <img src="img/down.png">
+                                <img src="down.png">
                             </div>
                         </div>
                     </div>
@@ -117,7 +118,7 @@
                                     <div value="文本">文本</div>
                                     <div value="数值">数值</div>
                                 </div>
-                                <img src="img/down.png">
+                                <img src="down.png">
                             </div>
                         </div>
                     </div>
